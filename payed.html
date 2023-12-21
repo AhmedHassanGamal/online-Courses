@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>payed</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CoursesOnline</title>
+
+  <!-- Languges icon -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+   
+
+</head>
+<style>
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+.animated {
+  visibility: hidden;
+}
+
+.animated.fadeIn {
+  visibility: visible;
+  animation: fadeIn 2s ease-in-out;
+}
+
+body{
+  
+  background: url("img/home5.jpg")
+
+}
+
+#login{
+    
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    margin-top: none;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .form{
+   
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background:transparent;
+    border: 2px solid rgba(37, 26, 26, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(96, 89, 89, 0.2);
+   
+   
+  }
+
+    header{
+    font-size:28px;
+    font-weight: 600;
+    color:black; 
+    text-align: center;
+  }
+  
+  form{
+    margin-top: 30px;
+  }
+  
+  .form .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+  
+  }
+  .field input {
+    height: 100%;
+    width: 90%;
+    border:none ;
+    font-size:16px ;
+    font-weight: 400; 
+    border-radius: 6px;
+    
+  }
+  .field button{
+    height:50px ;
+    width: 100px ;
+    border:none ;
+    font-size:12px ;
+    font-weight: 300; 
+    border-radius: 40px;
+    margin-left: 150px;
+
+  }
+
+  .field button{
+    font-size: 20px;
+    color: #fff;
+    background-color:#0171d3;
+    transform: all 0.3s ease;
+  
+  }
+  
+  .field button:hover{
+    background-color:#016dcb;
+  
+  }
+  .field input{
+   outline: none;
+   padding: 0 15px; 
+   border: .5px solid rgb(211, 211, 197); 
+   
+   
+  }
+  .field input:focus{
+    border-bottom-width: 5px;
+  
+  }
+  
+  
+  .eye-icon{
+    font-size:18px ;
+    position: absolute;
+    color: black;
+    top:50%;
+    right: 10px;
+    transform:translateY(-50%) ;
+    padding: 5px;
+} 
+
+#visa{
+font-size:50px ;
+}
+
+
+</style>
+
+<body>
+  <div class="animated fadeIn">
+<!--pay-->
+    <section class="container forms"  id="login" >
+   
+        <div class="form login">
+          
+         <div class="form-content">
+       
+    
+                <header>pay now</header>
+    
+            <form action="html.html ">
+              
+
+              <div class="field input-field">
+                <input type="text" placeholder=" User name" class="input" id="fullName">
+
+            </div>
+
+                <div class="field input-field">
+                    <input type="text" placeholder=" Email" class="input" id="email">
+    
+                </div>
+    
+                <div class="field input-field">
+                    <input type="text" placeholder=" Password" class="password" id="pass" >
+                    <i class='bx bx-hide  eye-icon '></i>
+                </div>
+
+                <div class="field input-field">
+                    <input type="text" placeholder=" Password" class="password" id="vise" >
+                    <i class='bx bxl-visa  eye-icon ' id="visa"></i>
+                </div>
+    
+               
+                <div class="field button-field">
+                 <!-- <button  class="lefto" > Done</button>-->
+                    <input type="submit" class="lefto" style="direction: none ;" />
+                  <!-- <input type="submit" />-->
+                </div>
+            </form>
+           
+          </div>
+          
+    </section>  
+    <!--end pay-->
+
+</div>    
+<script>
+
+const forms = document .querySelector(".forms");
+
+pwshowhide =document.querySelectorAll(".eye-icon");
+//links =document.querySelectorAll(".link");
+
+     console.log(  forms , pwshowhide  )  ;
+
+pwshowhide.forEach(eyeIcon =>{
+
+eyeIcon.addEventListener("click",() => {
+let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+
+  console.log(pwFields);
+
+pwFields.forEach(password =>{
+if(password.type === "password"){
+   password.type ="text";
+   eyeIcon.classList.replace("bx-hide" ,"bx-show");
+   return;
+
+
+    }
+    password.type ="password";
+    eyeIcon.classList.replace("bx-show" ,"bx-hide");
+
+ }) 
+})
+})
+
+document.forms[0].onsubmit=function(e){
+ var Name = document.getElementById("fullName");
+ var Email = document.getElementById("email");
+ var pass =  document.getElementById("pass");
+ var vise =  document.getElementById("vise");
+ var emailRegx= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ console.log(  Name , Email ,vise,pass )  ;
+ if(Name.value === "" || isFinite(Name.value) || Email.value === "" || !emailRegx.test(Email.value) || pass.value === "" || vise.value===""  ){
+ 
+ e.preventDefault();
+
+ if(Name.value === ""){  
+     alert("Please enter your name") ;
+ }
+ else if(isFinite(Name.value)){
+     alert("Please enter only char type in the name field") ;
+     Name.value = "";
+  
+ }
+
+ if(Email.value === ""){
+     alert("Please enter your email") ;
+
+ }
+ else if(!emailRegx.test(Email.value)){
+     alert("That email not valid") ;
+     Email.value = "";   
+ }
+
+
+if (pass.value===""){
+  alert("Please enter your password") ;
+}
+
+if (vise.value===""){
+  alert("Please enter your password") ;
+}
+
+
+}
+
+};
+
+
+
+
+
+
+
+</script>  </body>  
+</body>
+</html>
